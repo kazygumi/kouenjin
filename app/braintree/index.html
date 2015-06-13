@@ -16,10 +16,11 @@
 <p>test番号
 4000111111111115</p>
 
+<input type="text" value="" id="activityTest">
 
 <form id="checkout" method="post" action="/api/users/1/purchases?sec=12345">
     <div id="payment-form"></div>
-    <input type="hidden" name="activity_point" value="2233456">
+    <input type="hidden" name="activity_point" value="" id="inputActivityPoint">
     <input type="submit" value="Pay $10">
 </form>
 
@@ -61,6 +62,10 @@
                     container: "payment-form"
                 });
             }
+        });
+
+        $('#activityTest').on( "change", function(){
+            $('#inputActivityPoint').val($('#activityTest').val());
         });
 
     });
